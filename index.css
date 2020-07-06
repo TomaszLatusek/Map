@@ -1,0 +1,123 @@
+* {
+  padding: 0%;
+  margin: 0 0 0 0;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  background-color: rgb(228, 228, 228);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+header {
+  background-color: rgb(118, 211, 240);
+  box-shadow: 0px 2px 2px rgb(88, 152, 172);
+  width: 100%;
+  display: flex;
+  z-index: 1;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 4px rgb(88, 152, 172);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+.menu {
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list {
+  background-color: white;
+  margin-right: 20px;
+  display: flex;
+  flex-direction: column;
+  max-height: 700px;
+  overflow: scroll;
+  margin-right: 50px;
+  flex-shrink: 0;
+}
+
+.map {
+  border-width: 1px;
+}
+
+.info {
+  background-color: rgba(255, 255, 255, 0.712);
+  box-shadow: 0px 3px 8px 0px #c0c0c0;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  padding: 50px;
+  color: #c0c0c0;
+}
+
+.info h1 {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  font-size: 50px;
+  padding: 50px;
+  color:  white;
+  background-color: rgb(118, 211, 240);
+  text-shadow: 2px 2px 4px rgb(88, 152, 172);
+
+}
+
+footer {
+  background-color: #c0c0c0;
+  width: 100%;
+  margin-bottom: 0px;
+  height: auto;
+  flex-shrink: 0;
+  bottom: 0;
+}
+
+.country {
+  fill: #c0c0c0;
+  stroke: #ffffff;
+  stroke-width: 0.400821;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+}
+
+.country:hover {
+  fill: rgb(88, 152, 172);
+  cursor: pointer;
+  /* transform: scale(1.2);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: all 1s; */
+}
+
+.list li {
+  padding: 10px 50px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: rgb(88, 152, 172);
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #e4e4e4;
+}
+
+.list li:hover {
+  cursor: pointer;
+  background-color: rgb(118, 211, 240);
+  color: white;
+    .country {
+      fill: rgb(88, 152, 172);
+    }
+}
