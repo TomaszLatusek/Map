@@ -1,6 +1,3 @@
-// import { COUNTRIES } from "./modules/countries";
-
-
 const COUNTRIES = [
     {id: "Al", name: "Albania", capital: "Tirana",  population: 3038594, ue: false},
     {id: "Ad", name: "Andorra", capital: "Andora", population: 78014, ue: false},
@@ -54,78 +51,4 @@ const COUNTRIES = [
 ]
 
 
-
-// document.getElementsByTagName("li")[i].onclick = function () {
-
-//   var h1 = document.getElementById("startCaption");
-//   h1.parentNode.removeChild(h1);
-
-//   var div = document.createElement("div");
-//   div.style.backgroundColor = "black";
-//   div.style.height = "100px";
-//   div.style.width = "100px";
-//   document.getElementsByClassName("info")[0].appendChild(div);
-//   console.log("pizda");
-
-//   var country = document.getElementById("al-0");
-//   country.style.fill = "rgb(88, 152, 172)";
-// };
-
-
-
-// const lis = document.getElementsByTagName("li");
-
-// for(var i = 0; i < lis.length; i++){
-//     for(var j = 0; j < COUNTRIES.length; j++){
-//         if(lis[i] === COUNTRIES[j].id){
-//             document.ge
-//         }
-//     }
-// }
-
-
-
-// for(var i = 0; i < COUNTRIES.length; i++){
-
-//     var obj = document.getElementsByTagName("li")[i];
-//     obj.onclick = function () {
-
-
-//         var h1 = document.getElementById("startCaption");
-//         h1.parentNode.removeChild(h1);
-      
-//         var div = document.createElement("div");
-//         div.style.backgroundColor = "black";
-//         div.style.height = "100px";
-//         div.style.width = "100px";
-//         document.getElementsByClassName("info")[0].appendChild(div);
-//         console.log("pizda");
-
-//         var country = document.getElementById(obj.id);
-//         country.style.fill = "rgb(88, 152, 172)";
-//       };
-// }
-
-
-$("li").click(function(){
-
-    var info = document.getElementsByClassName("info")[0];
-    info.innerHTML = '';
-
-    for(var i = 0; i < COUNTRIES.length; i++){
-        if($(this).attr("id") === COUNTRIES[i].id){
-            var h1 = document.createElement("h1");
-                h1.innerHTML = COUNTRIES[i].name;
-                document.getElementsByClassName("info")[0].appendChild(h1);
-                for(var j = 0; j < COUNTRIES.length; j++){
-                    if(document.getElementById((COUNTRIES[j].id).toLowerCase()).style.fill === "rgb(88, 152, 172)"){
-                        document.getElementById((COUNTRIES[j].id).toLowerCase()).style.fill = "#c0c0c0";
-                    }
-                }
-                                
-                document.getElementById((COUNTRIES[i].id).toLowerCase()).style.fill = "rgb(88, 152, 172)";
-                console.log(COUNTRIES[i].name);
-        }
-    }
-})
-
+// export {COUNTRIES};
