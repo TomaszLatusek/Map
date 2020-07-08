@@ -4,6 +4,7 @@
 const COUNTRIES = [
     {id: "Al", name: "Albania", capital: "Tirana",  population: 3038594, ue: false},
     {id: "Ad", name: "Andorra", capital: "Andora", population: 78014, ue: false},
+    {id: "Am", name: "Armenia", capital: "Yerevan", population: 2956900, ue: false},
     {id: "At", name: "Austria", capital: "Vienna", population: 8859992, ue: true},
     {id: "Az", name: "Azerbaijan", capital: "Baku", population: 0, ue: true},
     {id: "Be", name: "Belgium", capital: "Brussels", population: 0, ue: true},
@@ -54,78 +55,77 @@ const COUNTRIES = [
 ]
 
 
-
-// document.getElementsByTagName("li")[i].onclick = function () {
-
-//   var h1 = document.getElementById("startCaption");
-//   h1.parentNode.removeChild(h1);
-
-//   var div = document.createElement("div");
-//   div.style.backgroundColor = "black";
-//   div.style.height = "100px";
-//   div.style.width = "100px";
-//   document.getElementsByClassName("info")[0].appendChild(div);
-//   console.log("pizda");
-
-//   var country = document.getElementById("al-0");
-//   country.style.fill = "rgb(88, 152, 172)";
-// };
-
-
-
-// const lis = document.getElementsByTagName("li");
-
-// for(var i = 0; i < lis.length; i++){
-//     for(var j = 0; j < COUNTRIES.length; j++){
-//         if(lis[i] === COUNTRIES[j].id){
-//             document.ge
-//         }
-//     }
-// }
-
-
-
-// for(var i = 0; i < COUNTRIES.length; i++){
-
-//     var obj = document.getElementsByTagName("li")[i];
-//     obj.onclick = function () {
-
-
-//         var h1 = document.getElementById("startCaption");
-//         h1.parentNode.removeChild(h1);
-      
-//         var div = document.createElement("div");
-//         div.style.backgroundColor = "black";
-//         div.style.height = "100px";
-//         div.style.width = "100px";
-//         document.getElementsByClassName("info")[0].appendChild(div);
-//         console.log("pizda");
-
-//         var country = document.getElementById(obj.id);
-//         country.style.fill = "rgb(88, 152, 172)";
-//       };
-// }
-
-
-$("li").click(function(){
+$("li, path, g").click(function(){
 
     var info = document.getElementsByClassName("info")[0];
     info.innerHTML = '';
 
     for(var i = 0; i < COUNTRIES.length; i++){
-        if($(this).attr("id") === COUNTRIES[i].id){
+        if($(this).attr("id") == COUNTRIES[i].id || $(this).attr("id") == COUNTRIES[i].id.toLowerCase()){
+
+            var country = document.getElementById((COUNTRIES[i].id).toLowerCase());
+            var list = document.getElementById(COUNTRIES[i].id);
+           
+            var div1 = document.createElement("div");
+                div1.className = "images";
+                document.getElementsByClassName("info")[0].appendChild(div1);
+                div1.style.display = "flex";
+                div1.style.flexDirection = "row";
+                div1.style.flexWrap = "wrap";   
+                div1.style.justifyContent = "space-evenly";
+                div1.style.alignItems = "center";
+                div1.style.backgroundColor = "rgb(118, 211, 240)";
+
             var h1 = document.createElement("h1");
                 h1.innerHTML = COUNTRIES[i].name;
-                document.getElementsByClassName("info")[0].appendChild(h1);
-                for(var j = 0; j < COUNTRIES.length; j++){
-                    if(document.getElementById((COUNTRIES[j].id).toLowerCase()).style.fill === "rgb(88, 152, 172)"){
-                        document.getElementById((COUNTRIES[j].id).toLowerCase()).style.fill = "#c0c0c0";
-                    }
-                }
-                                
-                document.getElementById((COUNTRIES[i].id).toLowerCase()).style.fill = "rgb(88, 152, 172)";
-                console.log(COUNTRIES[i].name);
+                document.getElementsByClassName("images")[0].appendChild(h1);
+
+            var flag = document.createElement("img");
+                flag.src = ('./flags/' + COUNTRIES[i].id + '.png');
+                flag.style.maxWidth = "100px";
+                document.getElementsByClassName("images")[0].appendChild(flag);
+
+            var emblem = document.createElement("img");
+                emblem.src = ('./emblems/' + COUNTRIES[i].id + '.png');
+                emblem.style.maxHeight = "100px";
+                document.getElementsByClassName("images")[0].appendChild(emblem);
+                
+                country.style.fill = "rgb(88, 152, 172)";
+                console.log(COUNTRIES[i].id);
+                list.style.backgroundColor = "#E4E4E4"; 
+        } else {
+            document.getElementById((COUNTRIES[i].id).toLowerCase()).style.fill = "#c0c0c0";
+            document.getElementById(COUNTRIES[i].id).style.backgroundColor = "white";
         }
     }
 })
 
+// h1.style.background = "linear-gradient(to left, rgba(255,255,255,0) 0.00000005%, rgba(255,255,255,1)), url('./flags/pl.png')";
+
+$(".country").hover(function(){
+    if(this.style.fill != "rgb(88, 152, 172)"){
+        $(this).css("fill", "rgba(88, 152, 172, 0.5)");
+    }
+    $(this).css("cursor", "pointer");
+    }, function(){
+        if(this.style.fill != "rgb(88, 152, 172)"){
+            $(this).css("fill", "#c0c0c0");
+        }
+  });
+
+  $("li").hover(function(){
+      if(this.style.backgroundColor != "rgb(228, 228, 228)"){
+        $(this).css("background-color", "rgb(118, 211, 240)");
+        $(this).css("color", "white");
+        $(this).css("cursor", "pointer");
+      } else {
+        $(this).css("color", "rgb(118, 211, 240)");
+      }
+  }, function(){
+      if(this.style.backgroundColor != "rgb(228, 228, 228)"){
+        $(this).css("color", "rgb(88, 152, 172)");
+        $(this).css("background-color", "white");
+      } else {
+        $(this).css("color", "rgb(88, 152, 172)");
+      }
+  });

@@ -96,14 +96,8 @@ footer {
   stroke-dasharray: none;
 }
 
-.country:hover {
-  fill: rgb(88, 152, 172);
-  cursor: pointer;
-  /* transform: scale(1.2);
-  transform-box: fill-box;
-  transform-origin: center;
-  transition: all 1s; */
-}
+
+
 
 .list li {
   padding: 10px 50px;
@@ -118,11 +112,17 @@ footer {
   border-bottom-color: #e4e4e4;
 }
 
-.list li:hover {
+/* .list li:hover {
   cursor: pointer;
   background-color: rgb(118, 211, 240);
   color: white;
-    .country {
-      fill: rgb(88, 152, 172);
-    }
-}
+} */
+
+/* .country:hover {
+  fill: rgb(88, 152, 172);
+  opacity: 0.5;
+  cursor: pointer;
+  /* transform: scale(1.2);
+  transform-box: fill-box;
+  transform-origin: center;
+  transition: all 1s; */

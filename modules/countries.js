@@ -1,6 +1,7 @@
 const COUNTRIES = [
     {id: "Al", name: "Albania", capital: "Tirana",  population: 3038594, ue: false},
     {id: "Ad", name: "Andorra", capital: "Andora", population: 78014, ue: false},
+    {id: "Am", name: "Armenia", capital: "Yerevan", population: 2956900, ue: false},
     {id: "At", name: "Austria", capital: "Vienna", population: 8859992, ue: true},
     {id: "Az", name: "Azerbaijan", capital: "Baku", population: 0, ue: true},
     {id: "Be", name: "Belgium", capital: "Brussels", population: 0, ue: true},
