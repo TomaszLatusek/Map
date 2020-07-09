@@ -67,7 +67,7 @@ $("li, path, g").click(function(){
             var list = document.getElementById(COUNTRIES[i].id);
            
             var div1 = document.createElement("div");
-                div1.className = "images";
+                div1.className = "countryName";
                 document.getElementsByClassName("info")[0].appendChild(div1);
                 div1.style.display = "flex";
                 div1.style.flexDirection = "row";
@@ -78,17 +78,29 @@ $("li, path, g").click(function(){
 
             var h1 = document.createElement("h1");
                 h1.innerHTML = COUNTRIES[i].name;
-                document.getElementsByClassName("images")[0].appendChild(h1);
-
+                if(COUNTRIES[i].name.length > 9){
+                    h1.style.padding = "50px 10px";
+                } 
+                
             var flag = document.createElement("img");
                 flag.src = ('./flags/' + COUNTRIES[i].id + '.png');
-                flag.style.maxWidth = "100px";
-                document.getElementsByClassName("images")[0].appendChild(flag);
+                flag.style.maxHeight = "50px";
 
             var emblem = document.createElement("img");
                 emblem.src = ('./emblems/' + COUNTRIES[i].id + '.png');
                 emblem.style.maxHeight = "100px";
-                document.getElementsByClassName("images")[0].appendChild(emblem);
+
+                document.getElementsByClassName("countryName")[0].appendChild(h1);
+                document.getElementsByClassName("countryName")[0].appendChild(flag);
+                document.getElementsByClassName("countryName")[0].appendChild(emblem);
+
+            var capital = document.createElement("h2");
+                capital.innerHTML = "Capital city: " + COUNTRIES[i].capital;
+                document.getElementsByClassName("info")[0].appendChild(capital);
+
+            var population = document.createElement("h2");
+                population.innerHTML = "Population: " + COUNTRIES[i].population;
+                document.getElementsByClassName("info")[0].appendChild(population);
                 
                 country.style.fill = "rgb(88, 152, 172)";
                 console.log(COUNTRIES[i].id);
